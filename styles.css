@@ -1,0 +1,318 @@
+* {
+	// html reset
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+	// font-family: 'Roboto', sans-serif;
+	font-family: "Rubik", sans-serif;
+	cursor: default !important;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+a {
+	cursor: pointer !important;
+}
+body::-webkit-scrollbar {
+	width: 0;
+	background-color: transparent;
+}
+
+body {
+	background: rgb(29, 29, 31);
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	height: 300vh;
+}
+
+@keyframes rotate {
+	from {
+		rotate: 0deg;
+	}
+
+	to {
+		rotate: 360deg;
+	}
+}
+.nav-container {
+	padding: 2vh 0;
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	position: fixed;
+	top: 0;
+	width: 100%;
+
+	z-index: 1000;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem 2rem;
+}
+
+.div-logo {
+	grid-column: 1 / span 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.logo {
+	font-size: 2rem;
+	font-weight: 500;
+	color: white;
+	font-family: "Major Mono Display", monospace;
+	transition: 1s;
+}
+
+.logo:hover {
+	font-size: 2.25rem;
+	font-weight: 1200;
+}
+
+nav div.nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid lightgrey;
+	border-radius: 50px;
+}
+
+nav div.nav a {
+	padding: 1rem 5rem;
+	color: lightgrey;
+	font-size: 1.2rem;
+	font-weight: 350;
+	// text-transform: uppercase;
+	transition: 1s;
+}
+nav div.nav a:hover,
+nav div.nav a.active {
+	color: white;
+	font-weight: 1200;
+	font-size: 1.75rem;
+}
+
+.goals-container {
+	margin-top: 5vh;
+
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.goals-cards {
+	width: 100%;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+}
+
+.card {
+	width: 50%;
+	margin: 3rem auto;
+	/* Add shadows to create the "card" effect */
+	box-shadow: 0 8px 16px 0 #111;
+	transition: 0.3s;
+	border-radius: 15px;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+	box-shadow: 0 8px 16px 0 white;
+	width: 55%;
+	margin: auto;
+}
+
+/* Add some padding inside the card container */
+.card-container {
+	padding: 1.5rem;
+	text-align: center;
+	background-color: aquamarine;
+	border-radius: 0 0 15px 15px;
+}
+
+.card-container h2 {
+	font-size: 1.5rem;
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+img {
+	display: block;
+	border-radius: 5px 5px 0 0;
+	width: 100%;
+	height: 14vw;
+	object-fit: cover;
+}
+
+.todayplan-container {
+	display: grid;
+	grid-template-columns: 1fr 4fr 1fr;
+	margin-top: 15vh;
+	height: 100vh;
+	color: white;
+}
+
+.warmup {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+}
+
+.warmup p {
+	font-size: 1.2rem;
+	margin-top: 2.5rem;
+	margin-left: 1rem;
+	line-height: 2.5rem;
+}
+
+#exerciseListContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+}
+#exerciseList {
+	font-size: 1.2rem;
+	margin-top: 2.5rem;
+	line-height: 2.5rem;
+}
+.cooldown {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+}
+
+hr {
+	width: 100%;
+	margin-top: 1.5rem;
+}
+
+.phase-mesocycle {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+.check-and-ex {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+}
+
+.check-and-ex input {
+	margin-right: 0.5rem;
+	margin-bottom: 0.1rem;
+}
+@media only screen and (max-width: 1250px) {
+	.logo {
+		font-size: 1.5rem;
+		margin-left: 0.5rem;
+	}
+	nav {
+		padding: 0.5rem 1rem;
+	}
+
+	nav div.nav a {
+		font-size: 0.8rem;
+		padding: 0.5rem 1.5rem;
+	}
+	nav div.nav a:hover,
+	nav div.nav a.active {
+		font-size: 1.25rem;
+	}
+	.card {
+		width: 60%;
+	}
+
+	.card-container {
+		padding: 0.5rem;
+	}
+	.card-container h2 {
+		font-size: 0.8rem;
+	}
+	.card-container p {
+		font-size: 0.7rem;
+	}
+	.todayplan-container {
+		margin-top: 5vh;
+	}
+	.todayplan-container h2,
+	.phase-mesocycle h2 {
+		font-size: 1.2rem;
+	}
+	.todayplan-container p {
+		font-size: 0.65rem;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.nav-container {
+		grid-template-columns: 1fr 3fr;
+	}
+	.goals-container {
+		height: 60vh;
+		margin-top: 10vh;
+	}
+	.card {
+		width: 75%;
+	}
+
+	.card-container {
+		padding: 0.3rem;
+	}
+	.card-container h2 {
+		font-size: 0.6rem;
+	}
+	.card-container p {
+		font-size: 0.5rem;
+	}
+	.todayplan-container {
+		grid-template-columns: 1fr 3fr 1fr;
+	}
+	.todayplan-container h2,
+	.phase-mesocycle h2 {
+		font-size: 1rem;
+	}
+	.todayplan-container p {
+		font-size: 0.5rem;
+	}
+	.warmup p,
+	#exerciseList {
+		margin-top: 1rem;
+		margin-left: 0.5rem;
+		line-height: 1.5rem;
+	}
+}
+
+@media only screen and (max-width: 490px) {
+	.div-logo {
+		display: none;
+	}
+	.nav-container {
+		grid-template-columns: 1fr;
+	}
+	nav div.nav a {
+		font-size: 0.6rem;
+		padding: 0.3rem 1rem;
+	}
+	nav div.nav a:hover,
+	nav div.nav a.active {
+		font-size: 0.9rem;
+	}
+	.todayplan-container h2 {
+		font-size: 0.75rem;
+	}
+}

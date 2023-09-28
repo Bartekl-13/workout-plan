@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Workout Plan</title>
+		<meta name="description" content="" />
+		<link rel="icon shortcut" href="favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cutive&family=Graduate&family=Major+Mono+Display&family=Rubik:wght@300&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="nav-container">
+			<div class="div-logo">
+				<a class="logo" href="#">B's Workout Plan</a>
+			</div>
+			<nav>
+				<div class="nav">
+					<a href="#" class="active">Goals</a>
+					<a href="#todayplan">Workout</a>
+					<a href="#cycling">Cycling</a>
+				</div>
+			</nav>
+		</div>
+
+		<section id="goals" class="goals-container">
+			<div class="goals-cards" id="goals-cards1">
+				<div class="card">
+					<img src="advtuck.jpg" alt="Advaned Tuck Position" class="src" />
+					<div class="card-container">
+						<h2>Advanced Tuck Position</h2>
+						<p>Hold for 5 seconds</p>
+					</div>
+				</div>
+				<div class="card">
+					<img src="muscleup.jpg" alt="Muscle Up" class="src" />
+					<div class="card-container">
+						<h2>Strict Ring Muscle Up</h2>
+						<p>3 repetitions</p>
+					</div>
+				</div>
+			</div>
+			<div class="goals-cards" id="goals-cards2">
+				<div class="card">
+					<img
+						src="handstandpushup.jpg
+                    "
+						alt="Handstand Pushup"
+						class="src"
+					/>
+					<div class="card-container">
+						<h2>Handstand Pushup</h2>
+						<p>1 repetition</p>
+					</div>
+				</div>
+				<div class="card">
+					<img src="frontlever.jpg" alt="Front Lever" class="src" />
+					<div class="card-container">
+						<h2>Front Lever</h2>
+						<p>Hold for 5 seconds</p>
+					</div>
+				</div>
+			</div>
+			<div class="goals-cards" id="goals-cards3">
+				<div class="card">
+					<img src="benchpress.jpg" alt="Bench Press" class="src" />
+					<div class="card-container">
+						<h2>100kg Bench Press</h2>
+						<p>1 rep max</p>
+					</div>
+				</div>
+				<div class="card">
+					<img src="vsit.jpg" alt="V-sit" class="src" />
+					<div class="card-container">
+						<h2>Vertical V-sit</h2>
+						<p>Hold for 5 seconds</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="phase-mesocycle">
+			<h2 id="currentPhase">Phase:</h2>
+			<h2 id="currentMesocycle">Mesocycle:</h2>
+		</div>
+
+		<section id="todayplan" class="todayplan-container">
+			<div class="warmup">
+				<h2>Warm-Up</h2>
+				<hr />
+				<p>
+					10-20 Burpees <br />
+					Quick Wrist Warmup <br />
+					10 Shoulder Cycles <br />
+					10 Elbow Cycles <br />
+					30-60s Plank <br />
+					60s Total Ring Support Hold
+				</p>
+			</div>
+			<!-- Add placeholders for displaying phase and mesocycle -->
+
+			<!-- Add a container for displaying exercises -->
+			<div id="exerciseListContainer">
+				<h2>Exercises</h2>
+				<hr />
+				<div id="exerciseList"></div>
+			</div>
+			<div class="cooldown">
+				<h2>Cool Down</h2>
+				<hr />
+			</div>
+		</section>
+
+		<section id="cycling" class="cycling-container"></section>
+
+		<script src="app.js" async defer></script>
+	</body>
+</html>
