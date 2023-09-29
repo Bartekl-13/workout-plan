@@ -176,12 +176,6 @@ img {
 	align-items: center;
 }
 
-.warmup p {
-	margin-top: 2.5rem;
-	margin-left: 1rem;
-	line-height: 2.5rem;
-}
-
 #exerciseListContainer {
 	display: flex;
 	flex-direction: column;
@@ -189,7 +183,7 @@ img {
 	align-items: center;
 }
 #exerciseList {
-	margin-top: 2.5rem;
+	margin: 2rem auto 2rem 5rem;
 	line-height: 2.5rem;
 }
 .cooldown {
@@ -202,6 +196,7 @@ img {
 hr {
 	width: 100%;
 	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
 }
 
 .phase-mesocycle {
@@ -223,9 +218,27 @@ hr {
 	align-items: center;
 }
 
-.check-and-ex input {
-	margin-right: 0.5rem;
-	margin-bottom: 0.1rem;
+.check-and-ex input,
+.check-and-ex2 input,
+.check-and-ex3 input {
+	margin-right: 1rem;
+
+	transform: scale(2);
+}
+
+.check-and-ex2 {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin: 2rem auto 2rem 2rem;
+}
+.check-and-ex3 {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin: 2rem auto 2rem 2rem;
 }
 @media only screen and (max-width: 1400px) {
 	.logo {
@@ -259,20 +272,18 @@ hr {
 	.card-container p {
 		font-size: 1.1rem;
 	}
-	.todayplan-container {
-		margin-top: 5vh;
-	}
+
 
 	.todayplan-container h2,
 	.phase-mesocycle h2 {
-		font-size: 2rem;
+		font-size: 2.5rem;
 	}
 	.todayplan-container p {
 		font-size: 1.5rem;
 	}
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width:1100px) {
 	nav div.nav a {
 		font-size: 1.25rem;
 		padding: 1rem 3rem;
@@ -291,14 +302,32 @@ hr {
 	.goals-container {
 		height: 60vh;
 	}
-	.card {
-		width: 62%;
-	}
-	.card:hover {
-		width: 70%;
+	.goals-container {
+		margin-top: 5vh;
+		height: 85vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 
-	
+	.goals-cards {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: none;
+	}
+
+	.card {
+		width: 60%;
+	}
+
+	.card:hover {
+		width: 65%;
+	}
+	img {
+		height: 13vh;
+	}
 	.todayplan-container {
 		grid-template-rows: 3;
 		grid-template-columns: 1fr;
@@ -312,13 +341,14 @@ hr {
 	}
 }
 
-
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 700px) {
 	.div-logo {
 		display: none;
 	}
 	.nav-container {
 		grid-template-columns: 1fr;
+		align-items: center;
+		justify-content: center;
 	}
 	nav div.nav a {
 		font-size: 1.5rmerem;
@@ -329,4 +359,11 @@ hr {
 		font-size: 1.75rem;
 	}
 
+	.card {
+		width: 80%;
+	}
+
+	.card:hover {
+		width: 85%;
+	}
 }

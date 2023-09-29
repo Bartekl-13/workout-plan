@@ -166,7 +166,14 @@ function displayExercises() {
 	const startDateElement = document.getElementById("startDate");
 	currentPhaseElement.textContent = `Phase: ${currentPhase}`;
 	currentMesocycleElement.textContent = `Mesocycle: ${currentMesocycle + 1}`;
-	startDateElement.textContent = `Start Date: ${startDate}`;
+	startDateElement.textContent = `Start Date: ${startDate.toLocaleDateString(
+		"en-US",
+		{
+			day: "2-digit",
+			month: "2-digit",
+			year: "numeric",
+		}
+	)}`;
 
 	// Define exercises based on the day of the week and phase (heavy or light)
 	let currentExercises;
