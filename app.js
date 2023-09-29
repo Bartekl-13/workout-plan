@@ -1,3 +1,9 @@
+//////////////////////
+///// START DATE /////
+//////////////////////
+
+const startDate = new Date("2023-10-02");
+
 let sections = document.querySelectorAll("section");
 let navLinks = document.querySelectorAll("header nav a");
 
@@ -48,7 +54,6 @@ const mesocycles = [
 	4,
 	5, // Mesocycle 3
 ];
-const startDate = new Date("2023-09-15");
 
 // Function to get the current phase and mesocycle based on the date
 function getCurrentPhaseAndMesocycle(date) {
@@ -153,7 +158,6 @@ function getCurrentDayOfWeek() {
 	const dayOfWeek = daysOfWeek[currentDate.getDay()];
 	return dayOfWeek;
 }
-// Function to display exercises based on the current day and phase
 function displayExercises() {
 	const currentDate = new Date();
 	const dayOfWeek = getCurrentDayOfWeek();
@@ -164,8 +168,7 @@ function displayExercises() {
 	const currentPhaseElement = document.getElementById("currentPhase");
 	const currentMesocycleElement = document.getElementById("currentMesocycle");
 	const startDateElement = document.getElementById("startDate");
-	currentPhaseElement.textContent = `Phase: ${currentPhase}`;
-	currentMesocycleElement.textContent = `Mesocycle: ${currentMesocycle + 1}`;
+
 	startDateElement.textContent = `Start Date: ${startDate.toLocaleDateString(
 		"en-US",
 		{
@@ -175,30 +178,47 @@ function displayExercises() {
 		}
 	)}`;
 
-	// Define exercises based on the day of the week and phase (heavy or light)
-	let currentExercises;
-
-	if (dayOfWeek === "Tuesday" || dayOfWeek === "Saturday") {
-		currentExercises = exerciseData[currentPhase].Heavy;
-	} else if (dayOfWeek === "Thursday") {
-		currentExercises = exerciseData[currentPhase].Light;
+	// Check if the starting date is in the future
+	if (currentDate < startDate) {
+		// Calculate the number of days until the starting date
+		const daysUntilStart = Math.floor(
+			(startDate - currentDate) / (1000 * 60 * 60 * 24)
+		);
+		currentPhaseElement.textContent = `Phase: Training begins in ${daysUntilStart} days`;
+		currentMesocycleElement.textContent = `Mesocycle: Training begins in ${daysUntilStart} days`;
+		// Display the message in the exercise section
+		const exerciseListContainer = document.getElementById("exerciseList");
+		exerciseListContainer.innerHTML = `<p>Training plan begins in ${daysUntilStart} days</p>`;
 	} else {
-		currentExercises = ["Rest Day"];
-	}
+		// Define exercises based on the day of the week and phase (heavy or light)
+		let currentExercises;
+		currentPhaseElement.textContent = `Phase: ${currentPhase}`;
+		currentMesocycleElement.textContent = `Mesocycle: ${currentMesocycle + 1}`;
+		if (dayOfWeek === "Tuesday" || dayOfWeek === "Saturday") {
+			currentExercises = exerciseData[currentPhase].Heavy;
+		} else if (dayOfWeek === "Thursday") {
+			currentExercises = exerciseData[currentPhase].Light;
+		} else {
+			currentExercises = ["Rest Day"];
+		}
 
-	// Display exercises in the exerciseListContainer
-	const exerciseListContainer = document.getElementById("exerciseList");
-	exerciseListContainer.innerHTML = "";
+		// Display exercises in the exerciseListContainer
+		const exerciseListContainer = document.getElementById("exerciseList");
+		exerciseListContainer.innerHTML = "";
 
-	if (currentExercises) {
-		const exerciseHTML = currentExercises
-			.map((exercise, index) => {
-				return `<div class="check-and-ex"><input type="checkbox"><p> ${exercise}</p></div>`;
-			})
-			.join("");
-		exerciseListContainer.innerHTML = exerciseHTML;
+		if (currentExercises) {
+			const exerciseHTML = currentExercises
+				.map((exercise, index) => {
+					return `<div class="check-and-ex"><input type="checkbox"><p> ${exercise}</p></div>`;
+				})
+				.join("");
+			exerciseListContainer.innerHTML = exerciseHTML;
+		}
 	}
 }
+
+// Initial display of exercises
+displayExercises();
 
 // Initial display of exercises
 displayExercises();
