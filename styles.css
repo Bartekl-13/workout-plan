@@ -230,7 +230,7 @@ hr {
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	margin: 2rem auto 2rem 2rem;
+	margin: 2rem auto 2rem 5rem;
 }
 .check-and-ex3 {
 	display: flex;
@@ -282,26 +282,27 @@ hr {
 }
 
 @media only screen and (max-width: 1100px) {
+	.div-logo {
+		display: none;
+	}
+	.nav-container {
+		grid-template-columns: 1fr;
+		align-items: center;
+		justify-content: center;
+	}
 	nav div.nav a {
-		font-size: 1.25rem;
-		padding: 1rem 3rem;
+		font-size: 1.5rem;
+		padding: 1rem 4rem;
 	}
 	nav div.nav a:hover,
 	nav div.nav a.active {
-		font-size: 1.5rem;
-	}
-	.logo {
-		display: none;
-	}
-	.logo2 {
-		display: block;
-		margin-left: 0.5rem;
+		font-size: 1.75rem;
 	}
 	.goals-container {
-		height: 60vh;
+		height: 80vh;
 	}
 	.goals-container {
-		margin-top: 5vh;
+		margin-top: 15vh;
 		height: 85vh;
 		display: flex;
 		flex-direction: column;
@@ -317,14 +318,14 @@ hr {
 	}
 
 	.card {
-		width: 60%;
+		width: 80%;
 	}
 
 	.card:hover {
-		width: 65%;
+		width: 85%;
 	}
 	img {
-		height: 13vh;
+		height: 20vh;
 	}
 	.todayplan-container {
 		grid-template-rows: 3;
@@ -340,7 +341,10 @@ hr {
 }
 
 @media only screen and (max-width: 700px) {
-	.div-logo {
+	.goals-container {
+		margin-top: 25vh;
+	}
+		.div-logo {
 		display: none;
 	}
 	.nav-container {
@@ -349,19 +353,14 @@ hr {
 		justify-content: center;
 	}
 	nav div.nav a {
-		font-size: 1.5rmerem;
-		padding: 1rem 2.5rem;
+		font-size: 1rem;
+		padding: 1rem 1.5rem;
 	}
 	nav div.nav a:hover,
 	nav div.nav a.active {
-		font-size: 1.75rem;
+		font-size: 1.25rem;
 	}
-
-	.card {
-		width: 80%;
-	}
-
-	.card:hover {
-		width: 85%;
+	img {
+		height: 15vh;
 	}
 }
