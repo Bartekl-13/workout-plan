@@ -247,7 +247,7 @@ hr {
 
 	nav div.nav a {
 		font-size: 1.5rem;
-		padding: 1rem 5rem;
+		padding: 1rem 7rem;
 	}
 	nav div.nav a:hover,
 	nav div.nav a.active {
@@ -292,7 +292,7 @@ hr {
 	}
 	nav div.nav a {
 		font-size: 1.5rem;
-		padding: 1rem 4rem;
+		padding: 1rem 8rem;
 	}
 	nav div.nav a:hover,
 	nav div.nav a.active {
@@ -353,12 +353,12 @@ hr {
 		justify-content: center;
 	}
 	nav div.nav a {
-		font-size: 1rem;
-		padding: 1rem 1.5rem;
+		font-size: 1.3rem;
+		padding: 1rem  5rem;
 	}
 	nav div.nav a:hover,
 	nav div.nav a.active {
-		font-size: 1.25rem;
+		font-size: 1.5rem;
 	}
 	img {
 		height: 15vh;
