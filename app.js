@@ -48,11 +48,11 @@ const mesocycles = [
 	4,
 	5, // Mesocycle 3
 ];
+const startDate = new Date("2023-09-15");
 
 // Function to get the current phase and mesocycle based on the date
 function getCurrentPhaseAndMesocycle(date) {
 	// Calculate the number of days since the start date (15th September 2023)
-	const startDate = new Date("2023-09-15");
 	const currentDate = new Date(date);
 	const daysDifference = Math.floor(
 		(currentDate - startDate) / (1000 * 60 * 60 * 24)
@@ -163,8 +163,10 @@ function displayExercises() {
 	// Display the current phase and mesocycle
 	const currentPhaseElement = document.getElementById("currentPhase");
 	const currentMesocycleElement = document.getElementById("currentMesocycle");
+	const startDateElement = document.getElementById("startDate");
 	currentPhaseElement.textContent = `Phase: ${currentPhase}`;
 	currentMesocycleElement.textContent = `Mesocycle: ${currentMesocycle + 1}`;
+	startDateElement.textContent = `Start Date: ${startDate}`;
 
 	// Define exercises based on the day of the week and phase (heavy or light)
 	let currentExercises;
