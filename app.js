@@ -23,11 +23,7 @@ window.onscroll = () => {
 				"--background-color",
 				"rgba(127, 255, 212,0)"
 			);
-			document.documentElement.style.setProperty(
-				"--text-color",
-				"white"
-			);
-			
+			document.documentElement.style.setProperty("--text-color", "white");
 		}
 		if (top >= offset && top < offset + height) {
 			navLinks.forEach((links) => {
@@ -42,9 +38,9 @@ window.onscroll = () => {
 			);
 			document.documentElement.style.setProperty(
 				"--text-color",
-				 
+
 				"rgba(29, 29, 31, 1)"
-			)
+			);
 		}
 	});
 }; // Define the phase and mesocycle system
@@ -208,11 +204,19 @@ function displayExercises() {
 		const daysUntilStart = Math.floor(
 			(startDate - currentDate) / (1000 * 60 * 60 * 24)
 		);
-		currentPhaseElement.textContent = `Phase: Training begins in ${daysUntilStart} days`;
-		currentMesocycleElement.textContent = `Mesocycle: Training begins in ${daysUntilStart} days`;
+
 		// Display the message in the exercise section
 		const exerciseListContainer = document.getElementById("exerciseList");
-		exerciseListContainer.innerHTML = `<p>Training plan begins in ${daysUntilStart} days</p>`;
+
+		if (daysUntilStart == 1) {
+			currentPhaseElement.textContent = `Phase: Training begins in ${daysUntilStart} day`;
+			currentMesocycleElement.textContent = `Mesocycle: Training begins in ${daysUntilStart} day`;
+			exerciseListContainer.innerHTML = `<p>Training plan begins in ${daysUntilStart} day</p>`;
+		} else {
+			currentPhaseElement.textContent = `Phase: Training begins in ${daysUntilStart} days`;
+			currentMesocycleElement.textContent = `Mesocycle: Training begins in ${daysUntilStart} days`;
+			exerciseListContainer.innerHTML = `<p>Training plan begins in ${daysUntilStart} days</p>`;
+		}
 	} else {
 		// Define exercises based on the day of the week and phase (heavy or light)
 		let currentExercises;
