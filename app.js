@@ -1,6 +1,11 @@
-//////////////////////
-///// START DATE /////
-//////////////////////
+const navigation = document.querySelector(".nav-container");
+
+const navigationHeight = navigation.offsetHeight;
+
+document.documentElement.style.setProperty(
+	"--scroll-padding",
+	navigationHeight + "px"
+);
 
 const startDate = new Date("2023-10-02");
 
@@ -13,7 +18,17 @@ window.onscroll = () => {
 		let offset = sec.offsetTop;
 		let height = sec.offsetHeight;
 		let id = sec.getAttribute("id");
-
+		if (top == 0) {
+			document.documentElement.style.setProperty(
+				"--background-color",
+				"rgba(127, 255, 212,0)"
+			);
+			document.documentElement.style.setProperty(
+				"--text-color",
+				"white"
+			);
+			
+		}
 		if (top >= offset && top < offset + height) {
 			navLinks.forEach((links) => {
 				links.classList.remove("active");
@@ -21,6 +36,15 @@ window.onscroll = () => {
 					.querySelector("header nav a[href*=" + id + "]")
 					.classList.add("active");
 			});
+			document.documentElement.style.setProperty(
+				"--background-color",
+				"rgba(127, 255, 212,0.75)"
+			);
+			document.documentElement.style.setProperty(
+				"--text-color",
+				 
+				"rgba(29, 29, 31, 1)"
+			)
 		}
 	});
 }; // Define the phase and mesocycle system

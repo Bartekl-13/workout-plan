@@ -9,7 +9,10 @@
 	font-family: "Rubik", sans-serif;
 	cursor: default !important;
 }
-
+html {
+	scroll-behavior: smooth;
+	scroll-padding: var(--scroll-padding, 5rem);
+}
 a {
 	cursor: pointer !important;
 }
@@ -41,8 +44,9 @@ body {
 	position: fixed;
 	top: 0;
 	width: 100%;
-
+	transition: 1s;
 	z-index: 1000;
+	background: var(--background-color, rgba(29, 29, 31, 1));
 }
 
 nav {
@@ -61,7 +65,7 @@ nav {
 .logo {
 	font-size: 2rem;
 	font-weight: 500;
-	color: white;
+	color: var(--text-color, white);
 	font-family: "Major Mono Display", monospace;
 	transition: 1s;
 }
@@ -69,7 +73,7 @@ nav {
 	display: none;
 	font-size: 2rem;
 	font-weight: 500;
-	color: white;
+	color: var(--text-color, white);
 	font-family: "Major Mono Display", monospace;
 	transition: 1s;
 }
@@ -84,13 +88,15 @@ nav div.nav {
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	border: 1px solid lightgrey;
+	transition: 1s;
+	border: 1px solid var(--text-color, white);
 	border-radius: 50px;
 }
 
 nav div.nav a {
 	padding: 1.5rem 10rem;
-	color: lightgrey;
+	color: var(--text-color, white);
+
 	font-size: 1.5rem;
 	font-weight: 350;
 	// text-transform: uppercase;
@@ -98,14 +104,15 @@ nav div.nav a {
 }
 nav div.nav a:hover,
 nav div.nav a.active {
-	color: white;
+	color: var(--text-color, white);
+	transition: 1s;
 	font-weight: 1200;
 	font-size: 2rem;
 }
 
 .goals-container {
-	margin-top: 5vh;
-	height: 100vh;
+	margin-top: 10vh;
+	height: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -118,10 +125,11 @@ nav div.nav a.active {
 }
 
 .card {
+	background-color: rgb(49, 49, 51);
 	width: 50%;
 	margin: 3rem auto;
 	/* Add shadows to create the "card" effect */
-	box-shadow: 0 8px 16px 0 #111;
+	box-shadow: 0 8px 16px 4px #000;
 	transition: 0.3s;
 	border-radius: 15px;
 	display: flex;
@@ -157,7 +165,7 @@ img {
 	object-fit: cover;
 }
 #todayplan {
-	padding-top: 15vh;
+	margin-top: 5vh;
 }
 .todayplan-container {
 	font-size: 2rem;
@@ -199,6 +207,7 @@ hr {
 }
 
 .phase-mesocycle {
+	margin-top: 5vh;
 	font-size: 2rem;
 	display: flex;
 	flex-direction: column;
@@ -342,9 +351,9 @@ hr {
 
 @media only screen and (max-width: 700px) {
 	.goals-container {
-		margin-top: 25vh;
+		margin-top: 12vh;
 	}
-		.div-logo {
+	.div-logo {
 		display: none;
 	}
 	.nav-container {
@@ -354,7 +363,7 @@ hr {
 	}
 	nav div.nav a {
 		font-size: 1.3rem;
-		padding: 1rem  5rem;
+		padding: 1rem 5rem;
 	}
 	nav div.nav a:hover,
 	nav div.nav a.active {
@@ -363,4 +372,32 @@ hr {
 	img {
 		height: 15vh;
 	}
+}
+
+@media only screen and (max-width: 500px) {
+	.goals-container {
+		margin-top: 12vh;
+	}
+	.div-logo {
+		display: none;
+	}
+	.nav-container {
+		grid-template-columns: 1fr;
+		align-items: center;
+		justify-content: center;
+	}
+	nav div.nav a {
+		font-size: 1rem;
+		padding: 1rem 4rem;
+	}
+	nav div.nav a:hover,
+	nav div.nav a.active {
+		font-size: 1.25rem;
+	}
+	img {
+		height: 12vh;
+	}
+}
+
+@media only screen and (max-height: 1200px) {
 }
