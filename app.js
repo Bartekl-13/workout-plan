@@ -207,11 +207,15 @@ function displayExercises() {
 
 		// Display the message in the exercise section
 		const exerciseListContainer = document.getElementById("exerciseList");
-
+		console.log(startDate - currentDate, daysUntilStart);
 		if (daysUntilStart == 1) {
 			currentPhaseElement.textContent = `Phase: Training begins in ${daysUntilStart} day`;
 			currentMesocycleElement.textContent = `Mesocycle: Training begins in ${daysUntilStart} day`;
 			exerciseListContainer.innerHTML = `<p>Training plan begins in ${daysUntilStart} day</p>`;
+		} else if (startDate - currentDate >= 0) {
+			currentPhaseElement.textContent = `Phase: Training begins in less than 1 day`;
+			currentMesocycleElement.textContent = `Mesocycle: Training begins in less than 1 day`;
+			exerciseListContainer.innerHTML = `<p>Training plan begins in less than 1 day</p>`;
 		} else {
 			currentPhaseElement.textContent = `Phase: Training begins in ${daysUntilStart} days`;
 			currentMesocycleElement.textContent = `Mesocycle: Training begins in ${daysUntilStart} days`;
