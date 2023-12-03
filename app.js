@@ -226,7 +226,7 @@ function displayExercises() {
 		let currentExercises;
 		currentPhaseElement.textContent = `Phase: ${currentPhase}`;
 		currentMesocycleElement.textContent = `Mesocycle: ${currentMesocycle + 1}`;
-		if (dayOfWeek === "Tuesday" || dayOfWeek === "Saturday") {
+		if (dayOfWeek === "Tuesday" || dayOfWeek === "Saturday" || dayOfWeek === "Sunday") {
 			currentExercises = exerciseData[currentPhase].Heavy;
 		} else if (dayOfWeek === "Thursday") {
 			currentExercises = exerciseData[currentPhase].Light;
