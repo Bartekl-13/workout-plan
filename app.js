@@ -7,7 +7,7 @@ document.documentElement.style.setProperty(
 	navigationHeight + "px"
 );
 
-const startDate = new Date("2023-10-02");
+const startDate = new Date("2023-12-03");
 
 let sections = document.querySelectorAll("section");
 let navLinks = document.querySelectorAll("header nav a");
